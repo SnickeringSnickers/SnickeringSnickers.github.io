@@ -1,0 +1,104 @@
+@font-face {
+    font-family: psychedelia;
+    src: url(/fonts/psychedelia-hm.regular.ttf)
+}
+@font-face {
+    font-family: EvilEmpire;
+    src: url(/fonts/Evil-Empire.otf);
+}
+@font-face {
+    font-family: Mario;
+    src: url(/fonts/TypefaceMarioWorldPixelFilledRegular-Yz84q.otf);
+}
+
+body{
+    background-image: 
+        url(images/stars4.gif),
+        url(images/seamless_stars.jpg);
+    image-rendering: pixelated;
+    background-blend-mode: difference, normal;
+}
+
+header {
+    font-family: Mario;
+    font-size: 50px;
+    text-align: center;
+}
+.image-filter{
+    image-rendering: initial;
+}
+.center-image {
+    display: block;
+    margin: 0 auto;
+  }
+  
+.nav{
+    font-family:'Times New Roman', Times, serif;
+    width: 1500px;
+    margin: 0 auto 50px auto;
+    background-image: url(/images/fire3.gif);
+    background-size: 150%;
+    background-position: 20%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border: 4mm ridge rgba(255, 49, 42, 0.6);
+}
+a{
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #0a0101;
+    text-decoration: none; 
+    text-shadow: 2px 2px 4px red;
+}
+a:hover{
+    color: #ff7070;
+}
+.animated-text{
+    background-image: url(/images/fire2.gif);
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    background-position: 100%;
+    -webkit-background-clip: text;
+    font-size: 55px;
+    background-repeat: no-repeat;
+}
+
+.cards{
+    background-image: url(images/bg.png);
+    text-align: center;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    width: 60%;
+}   
+.divider {
+        background-image: url(images/divider.gif);
+}
+@keyframes color-change {
+    12.5% { color: #ff0000; }
+    25% { color: #ffa500; }
+    37.5% { color: #ffff00;}
+    50% { color: #008000;}
+    62.5% {color: #0000ff;}
+    75% { color: #4b0082;}
+    87.5% {color: #ff0080;}
+    100% {color: #ff0000;}
+}
+
+@keyframes cute-orbit {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(10em);}
+    75% { transform: translateX(-10em);}
+    100% { transform: translateX(0em);}
+}
+
+@keyframes catwalk{
+    0% { transform: translateX(0);}
+    25% { transform: translateX(730px)}
+    25.1%{ transform: translate(730px) scaleX(-1);}
+    50% { transform: translateX(0) scaleX(-1);}
+    75% { transform: translateX(-730px) scaleX(-1);}
+    75.1% {transform: translateX(-730px) scaleX(1);}
+    100% {transform: translateX(0);}
+}
