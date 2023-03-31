@@ -24,6 +24,21 @@
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
+    
+    }
+    function trans(){
+        var transv = document.createElement('video');
+        transv.src = '/videos/congrats.mp4'
+        document.getElementById('container').appendChild(transv);
+        transv.style.position = "fixed";
+        transv.style.marginTop = "30%";
+        transv.id = "transvd"
+        document.getElementById('transvd').addEventListener('ended',myHandler,false);
+        transv.play();
+        function myHandler(e) {
+            console.log("meow");
+            document.getElementById('transvd').remove();
+        };
     }
 </script>
 <link href="/style.css" type="text/css" rel="stylesheet">
@@ -55,7 +70,7 @@
     </div>
         <div class="cards" style="position: relative;right: 0;left: 0;bottom:-32em">
             <img src="/images/cards/computer.gif" onclick="watapp()">
-            <img src="images/cards/confetti.gif">
+            <img src="images/cards/confetti.gif" onclick="trans()">
             <img src="images/cards/glittergold.gif">
             <img src="images/cards/kirbysquish.gif">
             <img src="images/cards/knifechainsaw.gif">

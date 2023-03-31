@@ -44,7 +44,6 @@ body{
     flex-shrink: 0;
     
 }
-.
 .center-image {
     display: block;
     margin: 0 auto;
@@ -84,6 +83,7 @@ a:hover{
     -webkit-text-fill-color: transparent;
     background-position: 100%;
     -webkit-background-clip: text;
+    background-clip: text;
     font-size: 55px;
     background-repeat: no-repeat;
 }
