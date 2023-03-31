@@ -113,10 +113,12 @@ a:hover{
     border: 3px solid whitesmoke;
 }
 .clock{
+    user-select: none;
     background-image: url(/images/lain.gif);
     height: 13.3em;
 }
 .frog{
+    user-select: none;  
     background-image: url(/images/water028.gif);
     height: 13.7em;
 }
@@ -124,7 +126,7 @@ a:hover{
     position: absolute;
     
 }
-#dragzone{
+.dragzone{
     cursor: url('/w98move.cur'), auto;
 }
 @keyframes color-change {

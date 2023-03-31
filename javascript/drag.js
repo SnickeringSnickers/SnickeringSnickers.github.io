@@ -1,38 +1,72 @@
-var draggableElements = document.getElementsByClassName("box")
-for(var i = 0; i < draggableElements.length; i++){
-    dragElement(draggableElements[i]);
-}
-//dragElement(document.getElementById("draggable"));
-
-function dragElement(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
-        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-    } else {
-        elmnt.onmousedown = dragMouseDown;
+function addDragListeners() {
+    const dragElems = document.getElementsByClassName("dragzone");
+    
+    for (let i = 0; i < dragElems.length; i++) {
+      const dragElem = dragElems[i];
+      const dragParent = dragElem.parentElement;
+      let lastDragX = dragParent.offsetLeft;
+      let lastDragY = dragParent.offsetTop;
+    
+      dragElem.addEventListener("mousedown", function(e) {
+        // get the position of the element being dragged
+        let dragX = e.clientX - lastDragX;
+        let dragY = e.clientY - lastDragY;
+    
+        function drag(e) {
+          const parentRect = dragParent.getBoundingClientRect();
+          const newX = e.clientX - dragX;
+          const newY = e.clientY - dragY;
+          const maxX = window.innerWidth - parentRect.width;
+          const maxY = window.innerHeight - parentRect.height;
+          const clampedX = Math.max(0, Math.min(newX, maxX));
+          const clampedY = Math.max(0, Math.min(newY, maxY));
+          dragParent.style.left = clampedX + "px";
+          dragParent.style.top = clampedY + "px";
+    
+          // update the last drag position
+          lastDragX = clampedX;
+          lastDragY = clampedY;
+        }
+    
+        function endDrag(e) {
+          document.removeEventListener("mousemove", drag);
+          document.removeEventListener("mouseup", endDrag);
+        }
+    
+        document.addEventListener("mousemove", drag);
+        document.addEventListener("mouseup", endDrag);
+    
+        e.preventDefault();
+      });
     }
-    function dragMouseDown(e) {
-        e = e || window.event;
-        pos3 = parseInt(e.clientX);
-        pos4 = parseInt(e.clientY);
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-        return false;
+    
+    // add a resize event listener to update the maximum position when the window is resized
+    window.addEventListener("resize", function() {
+      for (let i = 0; i < dragElems.length; i++) {
+        const dragParent = dragElems[i].parentElement;
+        const parentRect = dragParent.getBoundingClientRect();
+        const maxX = window.innerWidth - parentRect.width;
+        const maxY = window.innerHeight - parentRect.height;
+        dragParent.style.left = Math.min(dragParent.offsetLeft, maxX) + "px";
+        dragParent.style.top = Math.min(dragParent.offsetTop, maxY) + "px";
+      }
+    });
+  }
+  
+  
+  // Call the function on page load
+  addDragListeners();
+  
+  // Create a MutationObserver to detect when new elements are added to the DOM
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    // Loop through the mutations to see if any new elements were added
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        // Call the function again if new elements were added
+        addDragListeners();
+      }
     }
-
-    function elementDrag(e) {
-        e = e || window.event;
-        pos1 = pos3 - parseInt(e.clientX);
-        pos2 = pos4 - parseInt(e.clientY);
-        pos3 = parseInt(e.clientX);
-        pos4 = parseInt(e.clientY);
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        console.log(elmnt.offsetTop)
-        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    }
-
-    function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-    }
-}
+  });
+  
+  // Observe changes to the body element
+  observer.observe(document.body, { childList: true, subtree: true });

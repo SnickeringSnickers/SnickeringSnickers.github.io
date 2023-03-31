@@ -19,12 +19,12 @@
             img.style.zIndex = "4";
             img.style.scale = "100%";
             img.style.animation = "fly 10s ease-in-out infinite"
-            console.log("meow");
+            //console.log("meow");
             await sleep(400);
         };
     }
     function sleep(ms) {
-        console.log("eepy");
+        //console.log("eepy");
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     function trans(){
@@ -85,7 +85,7 @@
         </div>
         <!--meow.exe clock-->
         <div class="box" style="position: absolute;bottom: 1em;left:2em">
-            <div id="dragzone" style="position:absolute; width: 20em;height:1em"></div>
+            <div class="dragzone" style="position:absolute; width: 20em;height:1em"></div>
             <b>meow.exe</b>
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
             <div class="clock" style="padding-top:.5em;color: white">
@@ -93,7 +93,7 @@
                     async function startTime(){
                         const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
                         const date = new Date();
-                        console.log(date.getFullYear());
+
 
                         document.getElementById("year").innerHTML = date.getFullYear();
                         document.getElementById("month").innerHTML = months[date.getMonth()];
@@ -112,7 +112,7 @@
         </div>
         <!--frog.exe-->
         <div id="draggable" class="box" style="position: absolute;bottom: 1em;right:2em">  
-            <div id="dragzone" style="position:absolute; width: 20em;height:1em"></div>
+            <div class="dragzone" style="position:absolute; width: 20em;height:1em"></div>
             <b>frog.exe</b>
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
             <div class="frog" style="">
