@@ -1,14 +1,10 @@
 @font-face {
-    font-family: psychedelia;
-    src: url(/fonts/psychedelia-hm.regular.ttf)
-}
-@font-face {
-    font-family: EvilEmpire;
-    src: url(/fonts/Evil-Empire.otf);
-}
-@font-face {
     font-family: Mario;
     src: url(/fonts/TypefaceMarioWorldPixelFilledRegular-Yz84q.otf);
+}
+@font-face {
+    font-family: typewriter;
+    src: url(/fonts/MomsTypewriter.ttf);
 }
 html{
     width: 100%;
@@ -52,7 +48,8 @@ body{
 }
   
 .nav{
-    font-family:'Times New Roman', Times, serif;
+    user-select: none;
+    font-family: typewriter;
     max-width: 70em;
     min-width: 60em;
     width: 60%;
@@ -71,9 +68,9 @@ a{
     font-size: 50px;
     font-weight: 900;
     text-transform: uppercase;
-    color: #ff79c3;
+    color: #fc6dbb;
     text-decoration: none; 
-    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    text-shadow: rgb(0, 0, 0) 3px 5px;
 }
 a:hover{
     color: #ff7070;
@@ -101,9 +98,10 @@ a:hover{
     border: 12px solid transparent;
     border-image: url(/images/framehearts.gif   ) 10% round;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     width: 60%;
     height: fit-content;
+    justify-content: space-between;
 }
 .box{
     background-image: url(/images/silversparkles.gif);
