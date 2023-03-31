@@ -14,6 +14,7 @@ html{
     width: 100%;
     height: 100%;
     display: table;
+    cursor: url('/cursor.cur'), auto;
 }
 body{
     background-image: 
@@ -124,7 +125,7 @@ a:hover{
     
 }
 #dragzone{
-    cursor: move
+    cursor: url('/w98move.cur'), auto;
 }
 @keyframes color-change {
     12.5% { color: #ff0000; }
