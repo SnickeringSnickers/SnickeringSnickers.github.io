@@ -10,15 +10,20 @@
     font-family: Mario;
     src: url(/fonts/TypefaceMarioWorldPixelFilledRegular-Yz84q.otf);
 }
-
+html{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
 body{
     background-image: 
         url(images/stars4.gif),
         url(images/seamless_stars.jpg);
     image-rendering: pixelated;
     background-blend-mode: difference, normal;
-    max-width: 100%;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .title{
@@ -27,10 +32,17 @@ body{
     text-align: center; 
     justify-content: center; 
     align-items: center;
-    margin: 20px auto 0 auto;
+    margin: 20px 0 0 0;
 }
 .container {
+    -webkit-justify-content: space-between; 
     display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 0 0;
+    flex-shrink: 0;
+    
 }
 .
 .center-image {
@@ -40,7 +52,9 @@ body{
   
 .nav{
     font-family:'Times New Roman', Times, serif;
-    width: 1500px;
+    max-width: 70em;
+    min-width: 60em;
+    width: 60%;
     height: 60px;
     margin: 0 auto 50px auto;
     background-image: url(/images/violet-01.gif);
@@ -112,55 +126,18 @@ a:hover{
 }   
 @keyframes catwalk{
     0% { transform: translateX(0);}
-    50% { transform: translateX(1511.33px)}
-    50.1% { transform: translateX(1511.33px) scaleX(-1);}
+    50% { transform: translateX(980px)}
+    50.1% { transform: translateX(980px) scaleX(-1);}
     99.9% {transform: translate(0) scaleX(-1);;}
 }
 @keyframes fly {
 
-	98.001%, 0% {
-                display: block;
-		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
-	}
-
-	15% {
-		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
-	}
-
-	15.001%, 18% {
-		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
-	}
-
-	40% {
-		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
-	}
-
-	40.001%, 43% {
-		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
-	}
-
-	65% {
-		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
-	}
-
-	65.001%, 68% {
-		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
-	}
-
-	95% {
-		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
-	}
+	98.001%, 0% {display: block;transform: translateX(-200%) translateY(100vh) rotateZ(0deg)}
+	15% {transform: translateX(100vw) translateY(-100%) rotateZ(180deg)}
+	15.001%, 18% {transform: translateX(100vw) translateY(-30%) rotateZ(0deg)}
+	40% {transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)}
+	40.001%, 43% {transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)}
+	65% {transform: translateX(100vw) translateY(50vh) rotateZ(0deg)}
+	65.001%, 68% {transform: translateX(20vw) translateY(-200%) rotateZ(180deg)}
+	95% {transform: translateX(10vw) translateY(100vh) rotateZ(0deg)}
 }
-@keyframes shake {
-    0% { transform: translate(20px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(60px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -100px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
