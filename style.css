@@ -22,6 +22,7 @@ body{
     image-rendering: pixelated;
     background-blend-mode: difference, normal;
     overflow-x: hidden;
+    overflow-y: hidden;
     margin: 0;
     padding: 0;
 }
@@ -99,11 +100,32 @@ a:hover{
     border: 12px solid transparent;
     border-image: url(/images/framehearts.gif   ) 10% round;
     text-align: center;
-    margin: 20px auto 0 auto;
-    padding: 20px;
+    padding: 10px;
     width: 60%;
+    height: fit-content;
+}
+.box{
+    background-image: url(/images/silversparkles.gif);
+    height: 15em;
+    width: 20em;
+    text-align: center;
+    border: 3px solid whitesmoke;
+}
+.clock{
+    background-image: url(/images/lain.gif);
+    height: 13.3em;
+}
+.frog{
+    background-image: url(/images/water028.gif);
+    height: 13.7em;
+}
+#draggable{
+    position: absolute;
     
-}   
+}
+#dragzone{
+    cursor: move
+}
 @keyframes color-change {
     12.5% { color: #ff0000; }
     25% { color: #ffa500; }
@@ -132,7 +154,7 @@ a:hover{
 }
 @keyframes fly {
 
-	98.001%, 0% {display: block;transform: translateX(-200%) translateY(100vh) rotateZ(0deg)}
+	98.001%, 0% {transform: translateX(-200%) translateY(100vh) rotateZ(0deg)}
 	15% {transform: translateX(100vw) translateY(-100%) rotateZ(180deg)}
 	15.001%, 18% {transform: translateX(100vw) translateY(-30%) rotateZ(0deg)}
 	40% {transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)}
