@@ -93,15 +93,18 @@ a:hover{
     -webkit-text-stroke: 2px orange;
 }
 
-.cards{
+.center-image.cards{
     background-image: url(images/bg.png);
     border: 12px solid transparent;
-    border-image: url(/images/framehearts.gif   ) 10% round;
+    border-image: url(/images/framehearts.gif   ) 10% repeat;
     text-align: center;
-    padding: 20px;
-    width: 60%;
-    height: fit-content;
-    justify-content: space-between;
+    padding: .5em;
+    width: 30%;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 3em;
+    left: 0;
+    right: 0;
 }
 .box{
     background-image: url(/images/silversparkles.gif);
