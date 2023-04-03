@@ -125,7 +125,7 @@
         </div>
         <!--frog.exe-->
         <div data-state="0" id="frogexe" class="box" style="position: absolute;bottom: 1em;right:1em">  
-            <div class="dragzone" style="position:absolute; width: 20em;height:1em"></div>
+            <div class="dragzone" style="position:absolute; width: 100%;height:1em"></div>
             <b>frog.exe</b>
             <div onclick="maximize(frogexe)" style="z-index:3;position: absolute;right:25px;top:2px;height:14px;width:14px"></div>
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
@@ -145,11 +145,19 @@
             </div>
         </div>
         <!--trans.exe-->
-        <div id="transrights" class="box" style="position: absolute;bottom: 20em;right:2em;" style="visibility: hidden;">
-            <div class="dragzone" style="position:absolute; width: 20em;height:1em"></div>
+        <div id="transrights" class="box" style="position: absolute;bottom: 20em;right:2em;">
+            <div class="dragzone" style="position:absolute; width: 100%;height:1em"></div>
             <b>transrights.exe</b>
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
             <div class="transrights"></div>
+        </div>
+        <!--chat.exe-->
+        <div id="chatexe" class="box" style="position: absolute;top:2em;left:2em">
+            <div class="dragzone" style="position:absolute; width: 100%;height:1em"></div>
+            <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
+            <div onclick="maximize(chatexe)" style="z-index:3;position: absolute;right:25px;top:2px;height:14px;width:14px"></div>
+            <b>chat.exe</b>
+            <div id="chatexe1" class="chatBox"></div>
         </div>
         <div>
             <div class="center-image cards" style="scale:125%">
@@ -164,7 +172,7 @@
                 <img style="margin:0" src="images/cards/whale.gif">
                 <img style="margin:0" src="images/cards/pan.gif">
             </div>
-            <img class="center-image" src="/images/sadnyas.gif">
+            <img style="position:relative;top:3em;z-index:-2"center-image" src="/images/sadnyas.gif">
         </div>
     </div>
 </body>
