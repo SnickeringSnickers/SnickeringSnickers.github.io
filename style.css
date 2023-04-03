@@ -107,6 +107,7 @@ a:hover{
     right: 0;
 }
 .box{
+    user-select: none;
     background-image: url(/images/silversparkles.gif);
     height: max-content;
     width: max-content;
@@ -121,9 +122,15 @@ a:hover{
 }
 .frog{
     user-select: none;  
-    background-image: url(/images/water028.gif);
-    height: 13.3em;
-    width: 20em;
+    background-image: url(/images/water028.gif),
+                      url(/images/frog_hop_md_clr.gif);
+    background-blend-mode: overlay, normal;
+    background-size: 50%,35%;
+    background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+    min-width: 20em;
+    min-height: 13.3em;
 }
 .transrights{
     user-select: none; 

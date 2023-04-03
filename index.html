@@ -2,7 +2,7 @@
 <html>
 <head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"></head>
 
-<script>
+<script defer>
     var snd = new Audio("/sounds/Cute-cat-meow-sound.mp3");
     var playing = 0;
     async function watapp(){
@@ -37,9 +37,34 @@
         document.getElementById('transvd').addEventListener('ended',myHandler,false);
         transv.play();
         function myHandler(e) {
-            console.log("meow");
             document.getElementById('transvd').remove();
         };
+    }
+    
+    function maximize(exeName){
+        //console.log(exeName.dataset.state);
+        //console.log(exeName);
+        exeName1 = exeName.id + "1";
+        console.log(exeName1);
+        if(exeName.dataset.state == 0){
+            console.log("max");
+            exeName.style.left = 0;
+            exeName.style.top = 0;
+            document.getElementById(exeName1).style.height = "100vh";
+            document.getElementById(exeName1).style.width = "100vw";
+            exeName.style.zIndex = "20";
+            exeName.dataset.state = 1;
+        }
+        else{
+            console.log("min");
+            exeName.style.left = "1em";
+            exeName.style.top = "1em";
+            document.getElementById(exeName1).style.height = "13.3em";
+            document.getElementById(exeName1).style.width = "20em"
+            exeName.style.zIndex = "0";
+            exeName.dataset.state = 0;
+        }
+
     }
 </script>
 <link href="/style.css" type="text/css" rel="stylesheet" >
@@ -79,11 +104,10 @@
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
             <div class="clock" style="padding-top:.5em;color: white">
                 <script>
+                    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                    let date = new Date();
                     async function startTime(){
-                        const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-                        const date = new Date();
-
-
+                        
                         document.getElementById("year").innerHTML = date.getFullYear();
                         document.getElementById("month").innerHTML = months[date.getMonth()];
                         document.getElementById("day").innerHTML = date.getDate();
@@ -91,7 +115,7 @@
                         setTimeout(startTime, 1000);
                     }
                 </script>
-                <p style="">PRESENT DAY, PRESENT TIME </p>
+                <p>PRESENT DAY, PRESENT TIME </p>
                 <b id="month"></b>
                 <b id="day"></b>
                 <b id="year"></b>
@@ -100,11 +124,14 @@
             </div>
         </div>
         <!--frog.exe-->
-        <div id="draggable" class="box" style="position: absolute;bottom: 1em;right:1em">  
+        <div data-state="0" id="frogexe" class="box" style="position: absolute;bottom: 1em;right:1em">  
             <div class="dragzone" style="position:absolute; width: 20em;height:1em"></div>
             <b>frog.exe</b>
+            <div onclick="maximize(frogexe)" style="z-index:3;position: absolute;right:25px;top:2px;height:14px;width:14px"></div>
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
-            <div class="frog" style="">
+            <div id="frogexe1" class="frog">
+                <div style="background-image:url(/images/frog_hop_md_clr.gif);width:100%;height:100%"></div>
+                <!--
                 <img src="/images/frog_hop_md_clr.gif">
                 <img src="/images/frog_hop_md_clr.gif">
                 <img src="/images/frog_hop_md_clr.gif">
@@ -114,10 +141,11 @@
                 <img src="/images/frog_hop_md_clr.gif">
                 <img src="/images/frog_hop_md_clr.gif">
                 <img src="/images/frog_hop_md_clr.gif">
+                -->
             </div>
         </div>
         <!--trans.exe-->
-        <div id="transrights" class="box" style="position: absolute;bottom: 20em;right:2em" style="visibility: hidden;">
+        <div id="transrights" class="box" style="position: absolute;bottom: 20em;right:2em;" style="visibility: hidden;">
             <div class="dragzone" style="position:absolute; width: 20em;height:1em"></div>
             <b>transrights.exe</b>
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
@@ -130,7 +158,7 @@
                 <img style="margin:0" src="images/cards/glittergold.gif">
                 <img style="margin:0" src="images/cards/kirbysquish.gif">
                 <img style="margin:0" src="images/cards/knifechainsaw.gif">
-                <img style="margin:0" src="images/cards/nonbinary.gif" onclick="document.getElementById('transrights').style.visibility = 'visible'";>
+                <img style="margin:0" src="images/cards/nonbinary.gif">
                 <img style="margin:0" src="images/cards/pride.gif">
                 <img style="margin:0" src="images/cards/tbh.gif">
                 <img style="margin:0" src="images/cards/whale.gif">
