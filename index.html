@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"></head>
-
+<title>Snicks Offical Website</title>
+<meta content="Snicks Offical Site" property="og:title" />
+<meta content="uh meow?? bark bark bark snick's site!!!!!!" property="og:description" />
+<meta content="https://snicks.org" property="og:url" />
+<meta content="https://snicks.org/images/sailor.gif" property="og:image" />
+<meta content="#43B581" data-react-helmet="true" name="theme-color" />
 <script defer>
     var snd = new Audio("/sounds/Cute-cat-meow-sound.mp3");
     var playing = 0;
@@ -81,14 +86,14 @@
             </div>
         </div>
         <div style="display:flex; flex-wrap: nowrap;text-align: center; justify-content: center;align-items: center;">
-            <img src="/images/catwalk.gif" style="position:absolute; animation: catwalk 10s linear infinite; margin: -173px 957px 0 0;" onclick="snd.play()">
+            <img src="/images/catwalk.gif" style="position:absolute; animation: catwalk 10s linear infinite;bottom:7vh;right:-25vw" onclick="snd.play()">
             <div style="display:flex; flex-direction:row; flex-wrap: nowrap;text-align: center; justify-content: center;align-items: center;">
                 <img src="/images/little_moon_attack.gif" style="position: relative;top:-110px;" height="350">
                 <div class="nav" style="padding: 20px; margin-top: 50px">
                     <a style="text-decoration:underline #ff79c3;pointer-events: none;text-decoration-thickness:.2em" href="#">Home</a>
-                    <a href="#">Art</a>
-                    <a href="#">Games</a>
-                    <a href="#">Links</a>
+                    <a href="/pages/art.html">Art</a>
+                    <a href="/pages/games.html">Games</a>
+                    <a href="/pages/links.html">Links</a>
                 </div>
                 <img src="/images/little_moon_attack.gif" style="position: relative;transform: rotateY(180deg);top:-110px" height="350">
             </div>
@@ -105,9 +110,9 @@
             <div class="clock" style="padding-top:.5em;color: white">
                 <script>
                     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                    console.log("leak: clock");
                     let date = new Date();
-                    async function startTime(){
-                        
+                    async function startTime(){          
                         document.getElementById("year").innerHTML = date.getFullYear();
                         document.getElementById("month").innerHTML = months[date.getMonth()];
                         document.getElementById("day").innerHTML = date.getDate();
@@ -131,17 +136,6 @@
             <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
             <div id="frogexe1" class="frog">
                 <div style="background-image:url(/images/frog_hop_md_clr.gif);width:100%;height:100%"></div>
-                <!--
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                <img src="/images/frog_hop_md_clr.gif">
-                -->
             </div>
         </div>
         <!--trans.exe-->
@@ -158,6 +152,20 @@
             <div onclick="maximize(chatexe)" style="z-index:3;position: absolute;right:25px;top:2px;height:14px;width:14px"></div>
             <b>chat.exe</b>
             <div id="chatexe1" class="chatBox"></div>
+        </div>
+        <!--twitter.exe-->
+        <div class="box" style="position: absolute;top:2em;right:2em;height:400px;width:400px">
+            
+            
+            <div class="dragzone" style="position: absolute; width:100%;height:1em"></div>
+            <img src="/images/windowsicon.png" style="position: absolute;right:6px;top:2px">
+            <b style="position: absolute;">twitter.exe</b>      
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div class="crt" style="position: absolute; left:0;height:381px;width:100%;top:19px;pointer-events: none;" height="381px" width="400px" id="twitter"></div>
+                <!--<img src="/images/3.webp" style="position: absolute; left:0;height:400px;width:100%;top:17px;mix-blend-mode:hard-light;opacity:.6">-->
+                <a height="400px" width="400px"class="twitter-timeline" href="https://twitter.com/snicksuwu?ref_src=twsrc%5Etfw"></a>
+                <b style="position:absolute;left:15%;top:30%;font-size:200%">uwu <br> couldn't load twitter</b>
+
         </div>
         <div>
             <div class="center-image cards" style="scale:125%">

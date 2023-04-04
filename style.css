@@ -46,14 +46,14 @@ body{
     display: block;
     margin: 0 auto;
 }
+
   
 .nav{
     user-select: none;
     font-family: typewriter;
     max-width: 70em;
-    min-width: 60em;
-    width: 60%;
-    height: 60px;
+    width: auto;
+    height: 2vw;
     margin: 0 auto 50px auto;
     background-image: url(/images/violet-01.gif);
     background-size: 10%;
@@ -65,8 +65,8 @@ body{
     
 }
 a{
-    font-size: 50px;
-    font-weight: 900;
+    padding-inline: 1vw;
+    font-size: 2vw;
     text-transform: uppercase;
     color: #fc6dbb;
     text-decoration: none; 
@@ -83,12 +83,11 @@ a:hover{
     background-position: 100%;
     -webkit-background-clip: text;
     background-clip: text;
-    font-size: 55px;
+    font-size:2vw;  
     background-repeat: no-repeat;
 }
 .animated-text.title{
     font-family: Mario;
-    font-size: 50px;
     text-align: center;
     -webkit-text-stroke: 2px orange;
 }
@@ -176,12 +175,11 @@ a:hover{
 }   
 @keyframes catwalk{
     0% { transform: translateX(0);}
-    50% { transform: translateX(980px)}
-    50.1% { transform: translateX(980px) scaleX(-1);}
+    50% { transform: translateX(530%)}
+    50.1% { transform: translateX(530%) scaleX(-1);}
     99.9% {transform: translate(0) scaleX(-1);;}
 }
 @keyframes fly {
-
 	98.001%, 0% {transform: translateX(-200%) translateY(100vh) rotateZ(0deg)}
 	15% {transform: translateX(100vw) translateY(-100%) rotateZ(180deg)}
 	15.001%, 18% {transform: translateX(100vw) translateY(-30%) rotateZ(0deg)}
@@ -191,3 +189,96 @@ a:hover{
 	65.001%, 68% {transform: translateX(20vw) translateY(-200%) rotateZ(180deg)}
 	95% {transform: translateX(10vw) translateY(100vh) rotateZ(0deg)}
 }
+
+@keyframes flicker {
+  0% { opacity: .27861}
+  5% { opacity: .34769}
+  10% { opacity: .23604; }
+  15% {
+  opacity: 0.90626;
+  }
+  20% {
+  opacity: 0.18128;
+  }
+  25% {
+  opacity: 0.83891;
+  }
+  30% {
+  opacity: 0.65583;
+  }
+  35% {
+  opacity: 0.67807;
+  }
+  40% {
+  opacity: 0.26559;
+  }
+  45% {
+  opacity: 0.84693;
+  }
+  50% {
+  opacity: 0.96019;
+  }
+  55% {
+  opacity: 0.08594;
+  }
+  60% {
+  opacity: 0.20313;
+  }
+  65% {
+  opacity: 0.71988;
+  }
+  70% {
+  opacity: 0.53455;
+  }
+  75% {
+  opacity: 0.37288;
+  }
+  80% {
+  opacity: 0.71428;
+  }
+  85% {
+  opacity: 0.70419;
+  }
+  90% {
+  opacity: 0.7003;
+  }
+  95% {
+  opacity: 0.36108;
+  }
+  100% {
+  opacity: 0.24387;
+  }
+}
+
+.crt::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+.crt:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 15px;
+}
+.crt {
+    animation: textShadow 1.6s infinite;
+  }

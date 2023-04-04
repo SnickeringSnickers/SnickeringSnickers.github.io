@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Mario;
+    src: url(/fonts/TypefaceMarioWorldPixelFilledRegular-Yz84q.otf);
+}
+@font-face {
+    font-family: typewriter;
+    src: url(/fonts/MomsTypewriter.ttf);
+}
+html{
+    width: 100%;
+    height: 100%;
+    display: table;
+    cursor: url('/cursor.cur'), auto;
+}
+body{
+    background-image: 
+        url(/images/stars4.gif),
+        url(/images/seamless_stars.jpg);
+    image-rendering: pixelated;
+    background-blend-mode: difference, normal;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    display: flex; 
+    flex-direction:column; 
+    text-align: center; 
+    justify-content: center; 
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+.container {
+    -webkit-justify-content: space-between; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 0 0;
+    flex-shrink: 0;
+    
+}
