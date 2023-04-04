@@ -29,6 +29,7 @@ function addDragListeners() {
         }
     
         function endDrag(e) {
+          
           document.removeEventListener("mousemove", drag);
           document.removeEventListener("mouseup", endDrag);
         }
