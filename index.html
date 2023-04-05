@@ -29,7 +29,7 @@
         };
     }
     function sleep(ms) {
-        //console.log("eepy");
+        console.log("eepy");
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     function trans(){
@@ -69,33 +69,55 @@
             exeName.style.zIndex = "0";
             exeName.dataset.state = 0;
         }
-
+        function lolphoneuser(){
+            console.log("test");
+    
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.screen.height > ){
+                console.log("lol phone user");
+                var img1 = document.createElement('img');
+                img1.src = '/images/laugh.gif';
+                img1.id = "lolphone";
+                document.getElementById('container').parentElement.appendChild(img1);
+                img1.style.position = "absolute";
+                img1.style.left = "0";
+                img1.style.top = "0";
+                img1.style.zIndex = "0";
+                img1.style.height = "100vh";
+                img1.style.width = "100vw";
+                var phoneText = document.createElement('p');
+                document.getElementById('container').parentElement.appendChild(phoneText);
+                phoneText.style.position = "absolute";
+                phoneText.innerHTML = "lol <br> buy a computer";
+                phoneText.style.zIndex = "21";
+                phoneText.style.left = "20vw";
+                phoneText.style.top = "20vh";
+                phoneText.style.fontSize = "20vh";
+                console.log();
+                document.getElementById('container').remove();
+              }else{
+                return
+              }
     }
+
 </script>
+
 <link href="/style.css" type="text/css" rel="stylesheet" >
 <body onload="startTime()">
     <div class="container" id="container" style="flex-direction:column;align-items: center;align-items: center;">
-        <div style="justify-content: center;" class="title">
-            <div style="display:flex; flex-direction: row;">
-                <p style="filter: hue-rotate(290deg)" class="animated-text title">Snicks Official Website</p>
-            </div>
-            <div style="display:flex; flex-direction: row;width:118%;margin: 0 50px 0 50px">
-                <img class="center-image" src="/images/drktorch.gif" style="position: relative; scale: 125%;top:-75px;transform: rotate(-20deg);left:14px">
-                <img class="center-image" src="/images/bloodboarder.gif" style="position: relative;width:100%;filter: hue-rotate(290deg);z-index:-1">
-                <img class="center-image" src="/images/drktorch.gif" style="position: relative; scale: 125%;top:-75px;transform: rotate(20deg)">
-            </div>
-        </div>
         <div>
+            <p style="filter: hue-rotate(290deg);position:relative;left:0;right:0" class="animated-text title">Snicks Official Website</p>
             <img src="/images/catwalk.gif" style="position:absolute; animation: catwalk 10s linear infinite;bottom:7vh;right:-25vw" onclick="snd.play()">
-            <div style="display:flex; flex-direction:row; flex-wrap: nowrap;text-align: center; justify-content: center;align-items: center;position:relative;bottom:100px">
-                <img src="/images/little_moon_attack.gif" style="position: relative;top:-7vw" height="490vw">
-                <div class="nav" style="padding: 20px; margin-top: 50px">
-                    <a style="text-decoration:underline #ff79c3;pointer-events: none;text-decoration-thickness:.2em" href="#">Home</a>
-                    <a href="/pages/art.html">Art</a>
-                    <a href="/pages/games.html">Games</a>
-                    <a href="/pages/links.html">Links</a>
-                </div>
-                <img src="/images/little_moon_attack.gif" style="position: relative;transform: rotateY(180deg);top:-7vw" height="490vw">
+            <div class="nav" style="padding: 1vh 0 3vh 0;position:relative;">
+                <a style="text-decoration:underline #ff79c3;pointer-events: none;text-decoration-thickness:.2em" href="#">Home</a>
+                <a href="/pages/art">Art</a>
+                <a href="/pages/games.html">Games</a>
+                <a href="/pages/links.html">Links</a>
+            </div>
+            <img src="/images/little_moon_attack.gif" style="position: relative;left:-18vw;bottom:51vh;height:47vh">
+            <img src="/images/little_moon_attack.gif" style="position: relative;transform: rotateY(180deg);right:-18vw;bottom:51vh;height:47vh">
+            <img class="center-image" src="/images/bloodboarder.gif" style="position: relative;width: 7vw;filter: hue-rotate(290deg);z-index:-1">
+            <img onload="lolphoneuser()" class="center-image" src="/images/drktorch.gif" style="position: relative; scale: 125%;top:-75px;transform: rotate(-20deg);left:14px">z
+            <img class="center-image" src="/images/drktorch.gif" style="position: relative; scale: 125%;top:-75px;transform: rotate(20deg)">
             </div>
         </div>
 
@@ -110,14 +132,14 @@
             <div class="clock" style="padding-top:.5em;color: white">
                 <script>
                     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-                    console.log("leak: clock");
-                    let date = new Date();
-                    async function startTime(){          
+                    async function startTime(){
+                        let date = new Date();
+    
                         document.getElementById("year").innerHTML = date.getFullYear();
                         document.getElementById("month").innerHTML = months[date.getMonth()];
                         document.getElementById("day").innerHTML = date.getDate();
                         document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-                        setTimeout(startTime, 1000);
+                        setTimeout(startTime, 100);
                     }
                 </script>
                 <p>PRESENT DAY, PRESENT TIME </p>
@@ -181,7 +203,7 @@
                 <img style="margin:0" src="images/cards/whale.gif">
                 <img style="margin:0" src="images/cards/pan.gif">
             </div>
-            <img style="position:relative;bottom:20vh;z-index:-2" class="center-image" src="/images/sadnyas.gif">
+            <img class="center-image" style="margin-top: 200px" src="/images/sadnyas.gif">
         </div>
     </div>
 </body>

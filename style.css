@@ -51,8 +51,7 @@ body{
 .nav{
     user-select: none;
     font-family: typewriter;
-    max-width: 70em;
-    width: auto;
+    width: 35vw;
     height: 2vw;
     margin: 0 auto 50px auto;
     background-image: url(/images/violet-01.gif);
